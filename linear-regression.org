@@ -1,0 +1,38 @@
+#+TITLE: Linear Regression
+#+AUTHOR: Sven Hluchy
+
+This program computes the simple linear regression [fn:1] for a set of
+data points of the form $(x, y)$.
+
+More accurately, the program computes a linear function of the form $y
+= ax + b$ by using the following formula:
+
+\[
+\begin{bmatrix} a \\ b \end{bmatrix} =
+\left(\sum_{i=1}^N \begin{bmatrix} x_i^2 & x_i \\ x_i & 1 \end{bmatrix}\right)^{-1}
+\left(\sum_{i=1}^N y_1 \begin{bmatrix} x_i \\ 1 \end{bmatrix}\right)
+\]
+
+The program works as follows:
+
+Suppose you have a dataset saved in a Lisp file, like this:
+
+#+BEGIN_SRC Lisp
+  ;;; data.lisp
+  ((5 3) (4 3) (3 2) (1 3) (4 6) (2 1))
+#+END_SRC
+
+then you can call =(linear-regression (load-data "data.lisp"))= to
+receive the output of the program. For this example, the output would
+be =#(0.4615383 1.5384617)=.
+
+In the future, I might add some form of plotting the linear regression
+and it's corresponding dataset.
+
+Huge thanks to Richard Behiel [fn:2] for making a video on the topic [fn:3],
+which inspired me to make this program. I highly recommend checking
+out their channel.
+
+[fn:1] https://en.wikipedia.org/wiki/Simple_linear_regression
+[fn:2] https://www.youtube.com/@RichBehiel/
+[fn:3] https://www.youtube.com/watch?v=my3lsV-VQjs

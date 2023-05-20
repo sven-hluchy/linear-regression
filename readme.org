@@ -4,18 +4,11 @@
 This program computes the simple linear regression (1) for a set of
 data points of the form $(x, y)$.
 
-More accurately, the program computes a linear function of the form $y
-= ax + b$ by using the following formula:
-
-$$
-\begin{bmatrix} a \\ b \end{bmatrix} =
-\left(\sum_{i=1}^N \begin{bmatrix} x_i^2 & x_i \\ x_i & 1 \end{bmatrix}\right)^{-1}
-\left(\sum_{i=1}^N y_1 \begin{bmatrix} x_i \\ 1 \end{bmatrix}\right)
-$$
+More accurately, the program computes a linear function of the form $y=ax+b$ by using the following formula:
 
 The program works as follows:
 
-Suppose you have a dataset saved in a Lisp file, like this:
+Suppose you have a dataset saved in a Lisp file, for example like this:
 
 #+BEGIN_SRC Lisp
   ;;; data.lisp
